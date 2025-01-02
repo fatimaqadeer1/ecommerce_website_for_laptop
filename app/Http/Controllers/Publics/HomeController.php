@@ -28,4 +28,18 @@ class HomeController extends Controller
         ]);
     }
 
+
+    public function viewcart()
+    {
+        return view('publics.viewcart', [
+            // 'promoProducts' => $promoProducts,
+            // 'mostSelledProducts' => $mostSelledProducts,
+            // 'carousel' => $carousel,
+            'cartProducts' => $this->products,
+            'head_title' => Lang::get('seo.title_home'),
+            'head_description' => Lang::get('seo.descr_home')
+        ]);
+
+
+    }
 }

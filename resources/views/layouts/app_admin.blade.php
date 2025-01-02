@@ -21,7 +21,7 @@
                         <div class="col-sm-3 col-md-3 col-lg-2 left-side">
                             <div class="menu-logo">
                                 <a href="">
-                                    {{__('admin_pages.admin_panel')}}
+                                    {{__('4G Traders')}}
                                 </a>
                             </div>
                             <ul class="nav">
@@ -67,12 +67,6 @@
                                         <p>{{__('admin_pages.users')}}</p>
                                     </a> 
                                 </li>
-                                <li class="bottom">
-                                    <a href="https://github.com/kirilkirkov/Shopping-Cart-Solution-Laravel" target="_blank" class="btn waves-effect waves-light">
-                                        <i class="material-icons">code</i>
-                                        <p>GET SOURCE</p>
-                                    </a> 
-                                </li>
                             </ul>
                         </div>
                         <div class="col-sm-9 col-md-9 col-lg-10 col-sm-offset-3 col-md-offset-3 col-lg-offset-2 right-side">
@@ -101,7 +95,7 @@
                                             <i class="material-icons">search</i> 
                                         </button>
                                     </form>
-                                    <div class="navbar-right">
+                                    <!-- <div class="navbar-right">
                                         <div class="dropdown">
                                             <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
                                                 {{ app()->getLocale() }}
@@ -113,7 +107,7 @@
                                                 @endforeach
                                             </ul>
                                         </div> 
-                                    </div>
+                                    </div> -->
                                 </div>
                             </nav>
                             <button type="button" class="btn purple-gradient btn-sm menu-btn-xs">{{__('admin_pages.show_mine_menu')}}</button>
@@ -144,8 +138,8 @@
                                 </a>
                             </li>
                             <li class="in-right">
-                                <a href="https://github.com/kirilkirkov" target="_blank">
-                                    Github <i class="fa fa-github" aria-hidden="true"></i> :: Kiril Kirkov
+                                <a href="#" target="_blank">
+                                    4G Traders Admin
                                 </a>
                             </li>
                         </ul>

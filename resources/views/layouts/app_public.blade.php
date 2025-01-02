@@ -23,7 +23,7 @@
                 <div class="row top-part">
                     <div class="col-sm-3 col-md-3">
                         <a href="{{ lang_url('/') }}" class="logo-container">
-                            <img src="{{asset('img/site-logo.png')}}" class="img-responsive logo" alt="{{ $head_title }}">
+                            <img src="{{asset('img/site-logo1.png')}}" class="img-responsive logo" alt="{{ $head_title }}">
                         </a>
                     </div>
                     <div class="col-sm-3 col-md-4">
@@ -36,10 +36,10 @@
                     </div>
                     <div class="col-sm-3 col-md-3">
                         <div class="phone-call">
-                            <img src="{{ asset('img/phone.png') }}" alt="{{ $head_title }}">
+                            <img src="{{ asset('img/phone1.png') }}" alt="{{ $head_title }}">
                             <div class="right">
                                 <p>{{__('public_pages.phone_order')}}</p>
-                                <span>0888 888 888</span>
+                                <span> 0311-5779199</span>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -84,7 +84,7 @@
                                     </ul>
                                     <div class="pay-sum">
                                         <span class="text">{{__('public_pages.subtotal')}}</span>
-                                        <span class="sum">{{$sum}}</span>
+                                        <span class="sum">Rs. {{$sum}}</span>
                                         <div class="clearfix"></div>
                                     </div>
                                     <a href="{{lang_url('checkout')}}" class="green-btn">{{__('public_pages.payment')}}</a>
@@ -105,11 +105,13 @@
                     <a class="navbar-brand visible-xs" href="#">{{__('public_pages.menu')}}</a>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-center">
-                            <li><a href="{{ lang_url('products') }}">{{__('public_pages.products')}}</a></li>
+                            <li><a href="{{ lang_url('products') }}">{{__('All Laptops')}}</a></li>
+                            <li><a href="{{ lang_url('viewcart') }}">{{__('viewcart')}}</a></li>
                             <li><a href="{{ lang_url('checkout') }}">{{__('public_pages.checkout')}}</a></li>
-                            <li><a href="{{ lang_url('contacts') }}">{{__('public_pages.contacts')}}</a></li>
+                            <!-- <li><a href="{{ lang_url('contacts') }}">{{__('public_pages.contacts')}}</a></li> -->
+                            <!-- <li><a href="{{ lang_url('viewcart') }}">{{__('viewcart')}}</a></li> -->
                         </ul>
-                        <div class="nav navbar-nav navbar-right">
+                        <!-- <div class="nav navbar-nav navbar-right">
                             <div class="dropdown">
                                 <button class="btn btn-lang dropdown-toggle" type="button" data-toggle="dropdown">
                                     {{ app()->getLocale() }}
@@ -121,26 +123,52 @@
                                     @endforeach
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </nav>
         </header>
         @yield('content')
         <footer>
-            <div class="social">
+            <!-- <div class="social">
                 <a href=""><i class="fa fa-2x fa-facebook-official" aria-hidden="true"></i></a>
-            </div>
+            </div> -->
             <div class="pages">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-3">
-                            <ul>
-                                <li class="header">KirilKirkov Github</li>
-                                <li><a href="">About us</a></li>
-                                <li><a href="https://github.com/kirilkirkov/Ecommerce-Laravel-Bootstrap" target="_blank">Company Info</a></li>
-                            </ul>
-                        </div>
+                    <div class="col-md-4 col-xs-12">
+							<div class="footer">
+								<h3 class="footer-title">About Us</h3>
+								<p>Providing you the laptops in best quality and safe delivery since 2020.</p>
+								
+							</div>
+						</div>
+                        <div class="col-md-4 col-xs-12">
+							<div class="footer">
+								<h3 class="footer-title">Contact Us</h3>
+								
+								<ul class="footer-links">
+                                <li><a href="#"><i class="fa fa-map-marker" style="margin-right: 5px;"></i> Umair Plaza, Commercial RWP.</a></li>
+                                <li><a href="#"><i class="fa fa-phone" style="margin-right: 5px;"></i>0311-5779199</a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o" style="margin-right: 5px;"></i>razarooh37@gmail.com</a></li>
+    
+								</ul>
+							</div>
+						</div>
+
+                        <div class="col-md-4 col-xs-12">
+							<div class="footer">
+								<h3 class="footer-title">Brands we Deal</h3>
+								
+								<ul class="footer-links">
+									<li>Hp</li>
+                                    <li>Dell</li>
+                                    <li>Lenovo</li>
+                                    <li>Acer</li>
+                                    <li>Asus</li>
+								</ul>
+							</div>
+						</div>
                     </div>
                 </div>
             </div>
@@ -148,16 +176,16 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6">
-                            Copyright {{ date('Y') }} https://github.com/kirilkirkov/Ecommerce-Laravel-Bootstrap
+                            Copyright {{ date('Y') }} 4G Traders Laptop Store 
                         </div>
                         <div class="col-sm-6">
-                            При възникване на спор, свързан с покупка онлайн, можете да ползвате сайта ОРС
+                            All rights reserved since 2024.
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
-        <div class="fast-order hidden-xs">
+        <!-- <div class="fast-order hidden-xs">
             <div class="inner">
                 <h2>{{__('public_pages.fast_order')}}</h2>
                 <form method="POST" id="go-fast-order" action="{{ lang_url('fast-order') }}">
@@ -179,7 +207,7 @@
                 </form>
                 <div class="close"><i class="fa fa-times" aria-hidden="true"></i></div>
             </div>
-        </div>
+        </div> -->
         <a class="fast-order-btn visible-xs">
             {{__('public_pages.fast_order')}}
         </a>
@@ -189,7 +217,7 @@
                 <li><a href="{{ lang_url('products') }}">{{__('public_pages.products')}}</a></li>
                 <li><a href="{{ lang_url('checkout') }}">{{__('public_pages.checkout')}}</a></li>
                 <li><a href="{{ lang_url('contacts') }}">{{__('public_pages.contacts')}}</a></li>
-                <li class="dropdown">
+                <!-- <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         {{ app()->getLocale() }}
                         <span class="caret"></span>
@@ -199,7 +227,7 @@
                         <li><a href="{{url(getSameUrlInOtherLang($locale))}}">{{$locale}}</a></li>
                         @endforeach
                     </ul>
-                </li>
+                </li> -->
             </ul>
             <a href="javascript:void(0);" class="close-xs-menu">{{__('public_pages.close_xs_menu')}}</a>
         </div> 

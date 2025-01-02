@@ -16,13 +16,13 @@
                             {{__('admin_pages.publish_your_products')}}
                         </h3>
                     </div>
-                    <div class="md-form available-translations">
+                    <!-- <div class="md-form available-translations">
                         <span>{{__('admin_pages.choose_locale')}}</span>
                         @foreach ($locales as $locale)
                         <button type="button" data-locale-change="{{$locale}}" class="btn btn-outline-secondary waves-effect locale-change @if ($currentLocale == $locale) active @endif">{{$locale}}</button>
                         @endforeach
                     </div>
-                    <hr>
+                    <hr> -->
                     @foreach ($locales as $locale)
                     @php $lKey = false; if($product !== null && $product['translations'] != null) { $lKey = array_search($locale, array_column($product['translations'], 'locale')); } @endphp
                     <input type="hidden" name="translation_order[]" value="{{$locale}}">
@@ -30,17 +30,18 @@
                         <div class="md-form">
                             <i class="fa fa-font prefix grey-text"></i>
                             <input type="text" name="name[]" value="{{ $lKey !== false ? $product['translations'][$lKey]->name : '' }}" id="publishForm-name-{{$locale}}" class="form-control">
-                            <label for="publishForm-name-{{$locale}}">{{__('admin_pages.product_name')}}({{$locale}})</label>
+                            <label for="publishForm-name-{{$locale}}">{{__('admin_pages.product_name')}}</label>
                         </div>
                         <div class="md-form">
                             <i class="fa fa-pencil prefix grey-text"></i>
                             <textarea name="description[]" type="text" id="productDescr-{{$locale}}" class="md-textarea">{{ $lKey != false ? $product['translations'][$lKey]->description : '' }}</textarea>
-                            <label for="productDescr-{{$locale}}">{{__('admin_pages.product_description')}}({{$locale}})</label>
+                            <label for="productDescr-{{$locale}}">{{__('admin_pages.product_description')}}</label>
                         </div>
                         <div class="md-form">
-                            <i class="fa fa-eur prefix grey-text"></i>
+                            <!-- <i class="fa fa-eur prefix grey-text"></i> -->
+                            PKR-
                             <input type="text" name="price[]" value="{{ $lKey !== false ? $product['translations'][$lKey]->price : '' }}" id="publishForm-price-{{$locale}}" class="form-control">
-                            <label for="publishForm-price-{{$locale}}">{{__('admin_pages.product_price')}}({{$locale}})</label>
+                            <label for="publishForm-price-{{$locale}}">{{__('admin_pages.product_price')}}</label>
                         </div>
                     </div>
                     @endforeach
@@ -54,13 +55,13 @@
                         <input type="text" name="order_position" value="{{isset($product['product']->order_position) ? $product['product']->order_position : ''}}" id="publishForm-position" class="form-control">
                         <label for="publishForm-position">{{__('admin_pages.order_position')}}</label>
                     </div>
-                    <div class="md-form">
+                    <div class="md-form" style="display:none;">
                         <i class="fa fa-link prefix grey-text"></i>
                         <input type="text" name="link_to" value="{{isset($product['product']->link_to) ? $product['product']->link_to : ''}}" id="publishForm-linkto" class="form-control">
                         <label for="publishForm-linkto">{{__('admin_pages.link_to')}}</label>
                     </div>
                     <div class="md-form">
-                        <label class="alone">{{__('admin_pages.choose_category')}}</label>
+                        <label class="alone">{{__('Brand')}}</label>
                         <div class="element-label-text bordered-div">
                             <select class="selectpicker" name="category_id" data-style="btn-secondary">
                                 @foreach ($allCategories as $aCateg)
@@ -70,7 +71,7 @@
                         </div>
                     </div>
                     <div class="md-form">
-                        <label class="alone">{{__('admin_pages.hidden_product')}}</label>
+                        <label class="alone">{{__('Hide')}}</label>
                         <div class="element-label-text bordered-div">
                             <input type="checkbox" class="switch-me" {{isset($product['product']->hidden) && $product['product']->hidden == 1 ? 'checked="checked"' : ''}} data-on-color="secondary" name="hidden">
                         </div>
@@ -132,7 +133,7 @@
                     }
                     @endphp
                     <div class="md-form">
-                        <label class="alone">{{__('admin_pages.gallery_images')}}</label>
+                        <label class="alone">{{__('Image')}}</label>
                         <div class="element-label-text">
                             <button type="button" class="btn btn-secondary" onclick="showMeNewImgUpload()"><i class="fa fa-plus" aria-hidden="true"></i> {{__('admin_pages.add_gallery_image')}}</button>
                         </div>

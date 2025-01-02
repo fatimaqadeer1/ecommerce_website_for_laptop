@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="categories">
-                    <h2>{{__('public_pages.categories')}}</h2>
+                    <h2>{{__('Brands')}}</h2> <!-- this was <h2>{{__('public_pages.Brands')}}</h2>, I changed categories to Brands -->
                     @php 
                     function loop_tree($treeArr, $is_recursion = false, $selectedCategory)
                     { 
@@ -86,6 +86,7 @@
                         </div>
                     </div>
 
+                    
                     @php
                     if(!$products->isEmpty()) {
                     @endphp
@@ -100,16 +101,23 @@
                             <a href="{{ lang_url($product->url) }}">
                                 <h1>{{$product->name}}</h1>
                             </a>
-                            <span class="price">{{$product->price}}</span>
+                            <span class="price">Rs. {{$product->price}}</span>
                             @php
                             if($product->link_to != null) {
                             @endphp
                             <a href="{{lang_url($product->url)}}" class="buy-now" title="{{$product->name}}">{{__('public_pages.buy')}}</a>
                             @php
                             } else {
+                                if($product->quantity > 0){
                             @endphp
                             <a href="javascript:void(0);" data-product-id="{{$product->id}}" class="buy-now to-cart">{{__('public_pages.buy')}}</a>
                             @php
+                            }else{
+                                @endphp
+
+                                <button class="btn btn-danger"> Out of stock </button>
+                                @php
+                            }
                             }
                             @endphp
                         </div>

@@ -6,11 +6,11 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="section-title">
-                    <h2>{{__('public_pages.payment_type')}}</h2>
+                    <h2>Payment Method</h2>
                 </div>
                 <div class="payment-types">
-                    <div class="box-type active" data-radio-val="cash_on_delivery">
-                        <img src="{{ asset('img/cash_on_deliv.png') }}" alt="econt" class="img-responsive">
+                    <div class="box-type active" data-radio-val="cash_on_delivery" >
+                        <img src="{{ asset('img/cash_on_deliv2.png') }}" alt="econt" class="img-responsive" >
                         <span>{{__('public_pages.cash_on_delivery')}}</span>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                             <input class="form-control" name="first_name" value="" type="text" placeholder="{{__('public_pages.name')}}">
                         </div>
                         <div class="form-group col-sm-6">
-                            <input class="form-control" name="last_name" value="" type="text" placeholder="{{__('public_pages.family')}}">
+                            <input class="form-control" name="last_name" value="" type="text" placeholder="{{__('Surname')}}">
                         </div>
                         <div class="form-group col-sm-6">
                             <input class="form-control" name="email" value="" type="text" placeholder="{{__('public_pages.email_address')}}">
@@ -97,7 +97,7 @@
                         </ul>
                         <div class="final-total">{{__('public_pages.sum_for_pay')}} {{$sum_total}}</div>
                     </div>
-                    <a href="javascript:void(0);" onclick="completeOrder()" class="green-btn">{{__('public_pages.complete_order')}}</a>
+                    <a href="javascript:void(0);" onclick="completeOrder()" class="green-btn">{{__('Place Order')}}</a>
                     @php
                     } else {
                     @endphp 

@@ -17,6 +17,8 @@ Route::get('/', 'Publics\\HomeController@index');
 Route::get('{locale}', 'Publics\\HomeController@index')
         ->where('locale', implode('|', Config::get('app.locales')));
 
+Route::get('/viewcart', 'Publics\\HomeController@viewcart');
+
 // open one product
 Route::get('{any}-{id}', 'Publics\\ProductsController@productPreview')->where('id', '[\d+]+')->where('any', '(.*)');
 Route::get('{locale}/{any}-{id}', 'Publics\\ProductsController@productPreview')

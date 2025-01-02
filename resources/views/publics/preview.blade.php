@@ -79,7 +79,7 @@
                 <div class="buy">
                     <div class="quantity">
                         <span>{{__('public_pages.quantity')}}</span>
-                        <input type="text" class="field" name="quantity" value="1">
+                        <input type="number" class="field" name="quantity" value="1" max="{{ $product->quantity }}">
                     </div>
                     @php
                     if($product->link_to != null) {
@@ -87,12 +87,15 @@
                     <a href="{{ $product->link_to }}" class="buy-now">{{__('public_pages.buy')}}</a>
                     @php
                     } else {
+                        if ($product->quantity>0) 
+                        {
+
                     @endphp 
                     <a href="javascript:void(0);" data-product-id="{{$product->id}}" class="buy-now to-cart">
                         {{__('public_pages.buy')}}
                     </a>
                     @php
-                    }
+                    }}
                     @endphp
                     <div class="clearfix"></div>
                 </div>

@@ -72,6 +72,7 @@
                                     @php
                                     foreach(unserialize($order->products) as $product) {
                                     $producta = $controller->getProductInfo($product['id']);
+                                    if($producta){
                                     @endphp
                                     <div class="product">
                                         <a href="{{ lang_url($producta->url) }}" target="_blank">
@@ -86,6 +87,7 @@
                                         </a>
                                     </div>
                                     @php
+                                        }
                                     }
                                     @endphp
                                 </div>
@@ -98,7 +100,7 @@
         </div>
     </div>
     {{ $orders->links() }}
-    <div class="fast-orders">
+    <!-- <div class="fast-orders">
         <div class="row">
             <div class="col-sm-6">
                 <h2>{{__('admin_pages.new_fast_orders')}}</h2>
@@ -144,7 +146,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <script src="{{ asset('js/bootstrap-select.min.js') }}" type="text/javascript"></script>
 <script>

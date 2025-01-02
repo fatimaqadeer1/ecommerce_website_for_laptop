@@ -253,6 +253,7 @@ function removeProduct(id) {
     }).done(function (data) {
         renderCartProducts();
         renderCheckoutCartProducts();
+        window.location.reload();
     });
 }
 
